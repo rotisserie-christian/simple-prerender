@@ -18,7 +18,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 - [Quick start](#quick-start)
 - [How it works](#how-it-works)
 - [Configuration](#configuration)
-- [Output layout](@output-layout)
+- [Output layout](#output-layout)
 - [Wait strategy](#wait-strategy)
   
 ## Quick start
