@@ -27,7 +27,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 
 ## Quick start
 
-- **1) Copy into your project**
+**1) Copy into your project**
 
 Place `prerender.mjs` wherever you keep build scripts (ex: `scripts/prerender.mjs`).
 
@@ -48,6 +48,6 @@ npm install puppeteer --save-dev
 }
 ```
 
-**4. Edit the route list**
+**4) Edit the route list**
 
 Open `prerender.mjs` and set `PRERENDER_ROUTES` to the pages you want crawlable
