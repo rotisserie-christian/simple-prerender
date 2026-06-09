@@ -7,14 +7,6 @@ It's a simple way to make the important sections of the site crawlable, without 
 > [!NOTE]  
 > This is **not** SSR. Nothing runs at request time. Puppeteer runs once in CI or on your machine, writes HTML files into `dist/`, and your static host serves them like any other asset.
 
-### What it does
-
-1. Serves `dist/` locally (via `vite preview`)
-2. Opens each target route in headless Chromium
-3. Waits for page content to render
-4. Saves the resulting HTML to the correct path under `dist/`
-5. You deploy `dist/` as usual (Cloudflare Pages, Netlify, Vercel, etc.)
-
 ### Requirements
 
 - Node.js 18+
@@ -24,6 +16,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 ## Contents
 
 - [Quick start](#quick-start)
+- [How it works](#how-it-works)
 
 ## Quick start
 
@@ -51,3 +44,11 @@ npm install puppeteer --save-dev
 **4) Edit the route list**
 
 Open `prerender.mjs` and set `PRERENDER_ROUTES` to the pages you want crawlable
+
+## How it works
+
+- Serves `dist/` locally (via `vite preview`)
+- Opens each target route in headless Chromium
+- Waits for page content to render
+- Saves the resulting HTML to the correct path under `dist/`
+- You deploy `dist/` as usual (Cloudflare Pages, Netlify, Vercel, etc.)
