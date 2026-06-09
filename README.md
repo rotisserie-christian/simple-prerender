@@ -20,6 +20,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 - [Configuration](#configuration)
 - [Output layout](#output-layout)
 - [Wait strategy](#wait-strategy)
+- [Error handling](#error-handling)
 - [Limitations](#limitations)
   
 ## Quick start
@@ -85,6 +86,12 @@ dist/
 Pages that load content asynchronously (lazy routes, code-split chunks, etc) need a wait beyond `domcontentloaded`, or you may snapshot a loading state instead of real content.
 
 This script waits for **`h1`** on every route. That is simple and works for most text-heavy pages.
+
+## Error handling
+
+If a route fails (timeout, missing `h1`, etc.), the script logs the error and continues with the remaining routes. At the end it prints `Prerendered X/Y routes.`
+
+If any route failed, the script exits with code **1**, so `vite build && node scripts/prerender.mjs` fails in CI. Successful routes are still written to `dist/` before exit.
 
 ## Limitations 
 
