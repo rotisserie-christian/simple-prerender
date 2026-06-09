@@ -65,7 +65,7 @@ Edit the constants at the top of `prerender.mjs`:
 - **`DIST`** - Build output directory (default = ../dist)
 - **`PORT`** - Local preview server port (default = 4173)
 - **`PAGE_TIMEOUT_MS`** - Timeout per page (default = 60000)
-- **`SERVER_READY_TIMEOUT_MS`** - Server startup timeout (default = 60000)
+- **`SERVER_READY_TIMEOUT_MS`** - Server startup timeout (default = 30000)
 
 ## Output layout
 
