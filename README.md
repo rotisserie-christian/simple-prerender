@@ -18,6 +18,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 - [Quick start](#quick-start)
 - [How it works](#how-it-works)
 - [Configuration](#configuration)
+- [Output layout](@output-layout)
 - [Wait strategy](#wait-strategy)
   
 ## Quick start
@@ -64,6 +65,19 @@ Edit the constants at the top of `prerender.mjs`:
 - **`PORT`** - Local preview server port (default = 4173)
 - **`PAGE_TIMEOUT_MS`** - Timeout per page (default = 60000)
 - **`SERVER_READY_TIMEOUT_MS`** - Server startup timeout (default = 60000)
+
+## Output layout
+
+```
+dist/
+  index.html  # homepage (if / is in your route list)
+  dogs/
+    index.html
+  cats/
+    index.html
+    cheetahs/
+      index.html
+```
   
 ## Wait strategy 
 
