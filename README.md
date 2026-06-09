@@ -17,7 +17,8 @@ It's a simple way to make the important sections of the site crawlable, without 
 
 - [Quick start](#quick-start)
 - [How it works](#how-it-works)
-
+- [Configuration](#configuration)
+  
 ## Quick start
 
 **1) Copy into your project**
@@ -52,3 +53,14 @@ Open `prerender.mjs` and set `PRERENDER_ROUTES` to the pages you want crawlable
 - Waits for page content to render
 - Saves the resulting HTML to the correct path under `dist/`
 - You deploy `dist/` as usual (Cloudflare Pages, Netlify, Vercel, etc.)
+
+## Configuration
+
+Edit the constants at the top of `prerender.mjs`:
+
+- **`PRERENDER_ROUTES`** - Paths to prerender
+- **`DIST`** - Build output directory (default = ../dist)
+- **`PORT`** - Local preview server port (default = 4173)
+- **`PAGE_TIMEOUT_MS`** - Timeout per page (default = 60000)
+- **`SERVER_READY_TIMEOUT_MS`** - Server startup timeout (default = 60000)
+  
