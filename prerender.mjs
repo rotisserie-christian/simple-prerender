@@ -13,15 +13,7 @@ const PAGE_TIMEOUT_MS = 60_000;
 
 const PRERENDER_ROUTES = [
     '/',
-    '/privacy',
-    '/terms',
-    '/attribution',
-    '/guides',
-    '/guides/compose',
-    '/guides/visuals',
-    '/guides/synthesizer',
-    '/guides/drums',
-    '/guides/piano-roll',
+    '/placeholder',
 ];
 
 function routeToOutputPath(route) {
