@@ -20,6 +20,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 - [Configuration](#configuration)
 - [Output layout](#output-layout)
 - [Wait strategy](#wait-strategy)
+- [Limitations](#limitations)
   
 ## Quick start
 
@@ -84,3 +85,9 @@ dist/
 Pages that load content asynchronously (lazy routes, code-split chunks, etc) need a wait beyond `domcontentloaded`, or you may snapshot a loading state instead of real content.
 
 This script waits for **`h1`** on every route. That is simple and works for most text-heavy pages.
+
+## Limitations 
+
+- Overwriting `dist/index.html` with full-page HTML makes that file large, it becomes the SPA shell for all non-prerendered routes until React replaces `#root`
+- Meta tags from libraries like `react-helmet-async` may update after `h1`, add a longer wait or wait on a head-specific selector if that matters
+- Prerender only affects the initial HTML snapshot
