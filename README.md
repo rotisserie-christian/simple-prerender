@@ -18,6 +18,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 - [Quick start](#quick-start)
 - [How it works](#how-it-works)
 - [Configuration](#configuration)
+- [Wait strategy](#wait-strategy)
   
 ## Quick start
 
@@ -64,3 +65,8 @@ Edit the constants at the top of `prerender.mjs`:
 - **`PAGE_TIMEOUT_MS`** - Timeout per page (default = 60000)
 - **`SERVER_READY_TIMEOUT_MS`** - Server startup timeout (default = 60000)
   
+## Wait strategy 
+
+Pages that load content asynchronously (lazy routes, code-split chunks, etc) need a wait beyond `domcontentloaded`, or you may snapshot a loading state instead of real content.
+
+This script waits for **`h1`** on every route. That is simple and works for most text-heavy pages.
