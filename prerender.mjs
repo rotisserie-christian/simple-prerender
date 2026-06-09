@@ -114,11 +114,23 @@ async function main() {
         const page = await browser.newPage();
         await page.setViewport({ width: 1280, height: 800 });
 
+        const failed = [];
+
         for (const route of PRERENDER_ROUTES) {
-            await prerenderRoute(page, route);
+            try {
+                await prerenderRoute(page, route);
+            } catch (error) {
+                failed.push({ route, error });
+                console.error(`  x ${route}: ${error.message}`);
+            }
         }
 
-        console.log(`Prerendered ${PRERENDER_ROUTES.length} routes.`);
+        const succeeded = PRERENDER_ROUTES.length - failed.length;
+        console.log(`Prerendered ${succeeded}/${PRERENDER_ROUTES.length} routes.`);
+
+        if (failed.length > 0) {
+            process.exit(1);
+        }
     } finally {
         if (browser) {
             await browser.close();
