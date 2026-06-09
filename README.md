@@ -10,7 +10,7 @@ It's a simple way to make the important sections of the site crawlable, without 
 ### Requirements
 
 - Node.js 18+
-- A frontend that builds to a `dist/` folder (Vite, or any static export)
+- A frontend that builds to a `dist/` folder (using Vite, modify to use another build tool)
 - `puppeteer` installed in the project where the script runs
 
 ## Contents
